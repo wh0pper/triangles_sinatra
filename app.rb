@@ -10,12 +10,9 @@ get('/') do
 end
 
 get('/play') do
-  # binding.pry
   game = RPS.new()
   p1 = params.fetch('gesture1')
   p2 = params.fetch('gesture2')
   @result = game.winner_calc?(p1, p2)
-
   erb(:output)
-
 end
